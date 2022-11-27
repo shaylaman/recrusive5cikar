@@ -4,43 +4,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
         System.out.print("Sayıyı giriniz: ");
-        int num =inp.nextInt();
-        int n=num;
-        int turn=1;
-        if(num>0){
-            printerPos(num,n,turn);
-        }
-        else{
-            printerNeg(num,n,turn);
-        }
-
-
-
+        int num = inp.nextInt();
+        f(num);
     }
-    static void printerPos(int x,int y,int turn){
-        if(turn>2){
-            System.exit(0);
+    public static int f(int a){
+        int temp = a;
+        for(temp=a; temp>=0;temp-=5){
+            System.out.println(temp);
         }
-        if(x>0){
-            System.out.print(x+" ");
-            printerPos(x-5,y,turn);
+        for(int z=temp;z<=a;z+=5){
+            System.out.println(z);
         }
-        else{
-            printerNeg(x,y,turn+1);
-        }
+        return 0;
     }
-    static void printerNeg(int x,int y,int turn){
-        if(turn>2){
-            System.exit(0);
-        }
-        if(x<=y){
-            System.out.print(x+" ");
-            printerNeg(x+5,y,turn);
-        }
-        else{
-            printerPos(x,y,turn+1);
-        }
-    }
-
-
 }
